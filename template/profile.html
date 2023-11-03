@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{%block content %}
+   <div class="nav-mobile" id="menu-ico" onclick="showMenu()">
+    <a id="navbar-toggle">
+     <span>
+     </span>
+    </a>
+   </div>
+   <div class="nav-mobile" onclick="HideMenu()">
+    <a class="close-nav" href="/./profile#" id="close-ico">
+    </a>
+   </div>
+  </header>
+  <div class="profile_container">
+   <div class="my-profile">
+    <h2 style="text-align: center;">
+     My Profile
+    </h2>
+   </div>
+   <div class="wrapper">
+    <form enctype="multipart/form-data" method="post">
+        {% csrf_token %}     
+        <label for="id_email">
+      Email
+     </label>
+     <input disabled="" id="id_email" name="email" readonly="" required="" type="email" value="{{request.user.email}}"/>
+     <br/>
+     <label for="id_bvn">
+      Username
+     </label>
+     <input id="id_username" maxlength="120" name="username" placeholder="Enter username" value="{{request.user.username}}" type="text"/>
+     <br/>
+     <label for="id_first_name">
+      First Name
+     </label>
+     <input id="id_first_name" maxlength="150" name="first_name"  type="text" value="{{profile.first_name}}" value="Peter"/>
+     <br/>
+     <label for="id_surname">
+      Surname
+     </label>
+     <input id="id_surname" maxlength="150" name="last_name" type="text" value="{{profile.last_name}}"/>
+     <br/>
+     <label for="id_phone_number">
+      Phone Number
+     </label>
+     <input id="id_phone_number" maxlength="16" name="phone_number"  required="" type="text" value="{{profile.phone_number}}"/>
+     <br/>
+     <label for="id_dob">
+      Date of birth [fill before submitting]
+     </label>
+     {%if not profile.date_of_birth %}
+     <input id="id_dob" name="date_of_birth"  required="" type="date" value="{{profile.date_of_birth}}"/>
+     {%else%}
+     <input id="id_dob" name="date_of_birth"  required="" type="date" value="{{profile.date_of_birth}}"/>
+     <input id="initial-id_dob" name="" readonly=""  value="{{profile.date_of_birth}}"/>
+
+     {%endif%}
+
+     
+     <br/>
+    
+
+     <p>
+       <label>Bank Name</label>
+       <!-- CBN Verified Banks-->
+       <select id="banksDropdown">
+        <option selected="" value="{{profile.bank}}">
+          {%if profile.bank%}
+              {{profile.bank}}
+         
+          
+          {%endif%}
+         </option>
+       </select>
+       
+     </p>
+    </br>
+     <p>
+      <label for="id_Account_number">
+       Account number:
+      </label>
+      <input class="special_acct_number" id="id_Account_number"  maxlength="120" value="{{profile.account_number}}"  placeholder="Please enter your account number" type="text"/>
+     </p>
+   
+     <p>
+      <label for="accountNameInput">
+       Account Name:
+      </label>
+      <input class="special_acct_number" id="accountNameInput" maxlength="120" value="{{profile.account_name}}" name="account_name"  type="text" />
+     </p>
+     {% if verified %}
+     <p style="color: green;margin-top: 5px;padding: 1px;font-size: 15px;">
+     
+      Your account has been verified.
+    </p>
+        {%else%}   
+    <p style="color: red;margin-top: 5px;padding: 1px;font-size: 15px;">   
+         <a href='/kyc' style="color: red;margin-top: 5px;padding: 1px;font-size: 15px">Kindly verify your account here to keep using our platform  </a>
+        
+    </p>
+    {%endif%}
+    
+     <button class="button profile-btn" id="confirm-btn">
+      Update Profile
+     </button>
+    </form>
+    <!-- My trades-->
+    <!-- 
+    <div class="my-trades">
+     {% comment %} <p>
+      Total Trades:
+      <span class="trade_info">
+        {{total_trades}}
+       {% comment %} figure from serverside is coming {% endcomment %}
+      </span>
+     </p>
+     <p>
+      Total Trade Volume :
+      <span class="trade_info">
+       ₦{{total_verified_amount | floatformat:2 | intcomma}}
+       {% comment %} 364,701.0 server side figures are coming {% endcomment %}
+      </span>
+     </p>
+     {% comment %} <p>
+      This week's trade volume:
+      <span class="trade_info">
+       ₦0 serverside figures are coming 
+      </span>
+     </p> 
+     {% endcomment %}
+    </div>-->
+
+    <a class="change_pwd" href="/accounts/password/reset/">
+     Change Password
+    </a>
+   </div>
+  </div>
+
+  {%endblock content %}

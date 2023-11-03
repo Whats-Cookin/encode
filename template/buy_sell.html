@@ -1,0 +1,650 @@
+{%load humanize %}
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="NO-CACHE" http-equiv="PRAGMA"/>
+  <meta content="width=device-width, initial-scale=1, minimum-scale=1" name="viewport"/>
+  <link href="/static/favicon.png" rel="shortcut icon"/>
+  <link href="/static/mydashboard.css" rel="stylesheet"/>
+  <link href="/static/css" rel="stylesheet"/>
+  <title>
+   {{site.name}} - Buy/Sell Crypto
+  </title>
+  <script src="//code.tidio.co/t373soumkm3l1ecomnx37qrbqtjrlkla.js" async></script>
+ </head>
+ <body>
+  <header>
+   <a href="/">
+    <img class="logo" src="/static/xendex-logo.png"/>
+   </a>
+   <nav class="" id="sidebar-nav">
+    <ul class="nav_links">
+     <li class="li_active">
+      <div class="menu_links">
+       <svg fill="none" height="19" viewbox="0 0 21 19" width="21" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.4409 18.25H11.0243V12.75H9.19094V18.25H2.77428V10H0.0242767L10.1076 0.925003L20.1909 10H17.4409V18.25ZM12.8576 16.4167H15.6076V8.35L10.1076 3.4L4.60761 8.35V16.4167H7.35761V10.9167H12.8576V16.4167Z" fill="white">
+        </path>
+       </svg>
+       <a href="/">
+        Dashboard
+       </a>
+      </div>
+      <span class="c-active">
+      </span>
+     </li>
+     <li>
+      <div class="menu_links">
+       <svg fill="none" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.25 17.4167H2.74999C2.19999 17.4167 1.83333 17.05 1.83333 16.5V5.5C1.83333 4.95 2.19999 4.58333 2.74999 4.58333H19.25C19.8 4.58333 20.1667 4.95 20.1667 5.5V16.5C20.1667 17.05 19.8 17.4167 19.25 17.4167Z" fill="white" opacity="0.3">
+        </path>
+        <path d="M19.25 18.3333H2.75001C1.74167 18.3333 0.916672 17.5083 0.916672 16.5V5.5C0.916672 4.49166 1.74167 3.66666 2.75001 3.66666H19.25C20.2583 3.66666 21.0833 4.49166 21.0833 5.5V16.5C21.0833 17.5083 20.2583 18.3333 19.25 18.3333ZM2.75001 5.5V16.5H19.25V5.5H2.75001Z" fill="white">
+        </path>
+        <path d="M4.58333 8.25H10.0833V10.0833H4.58333V8.25ZM4.58333 11.9167H9.16666V13.75H4.58333V11.9167ZM14.1167 8.89167C14.1167 7.88333 14.6667 7.79167 14.85 7.79167C15.0333 7.79167 15.5833 7.975 15.5833 9.25833H17.325C17.325 6.875 15.675 6.50833 15.4 6.41667V5.5H14.4833V6.41667C14.2083 6.41667 12.4667 6.78333 12.4667 8.89167C12.4667 11.9167 15.675 11.0917 15.675 13.1083C15.675 14.1167 15.0333 14.1167 14.85 14.1167C14.7583 14.1167 13.9333 14.2083 13.9333 12.65H12.1917C12.1917 15.3083 14.1167 15.4917 14.3917 15.5833V16.5H15.3083V15.5833C15.5833 15.5833 17.4167 15.2167 17.4167 13.1083C17.2333 10.175 14.1167 10.725 14.1167 8.89167Z" fill="white">
+        </path>
+       </svg>
+       <a href="/./Refferal_promo">
+         Coming Soon!!
+       </a>
+      </div>
+     </li>
+     <li>
+      <div class="menu_links">
+       <svg fill="none" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 3.66666C9.48109 3.66666 8.25001 4.89775 8.25001 6.41666C8.25001 7.93558 9.48109 9.16666 11 9.16666C12.5189 9.16666 13.75 7.93558 13.75 6.41666C13.75 4.89775 12.5189 3.66666 11 3.66666ZM18.3333 18.3333H3.66667V16.9583C3.66667 15.1873 8.10426 13.75 11 13.75C13.8958 13.75 18.3333 15.1873 18.3333 16.9583V18.3333Z" stroke="white" stroke-width="2">
+        </path>
+        <path d="M11 3.66666C9.48109 3.66666 8.25001 4.89775 8.25001 6.41666C8.25001 7.93558 9.48109 9.16666 11 9.16666C12.5189 9.16666 13.75 7.93558 13.75 6.41666C13.75 4.89775 12.5189 3.66666 11 3.66666ZM18.3333 18.3333H3.66667V16.9583C3.66667 15.1873 8.10426 13.75 11 13.75C13.8958 13.75 18.3333 15.1873 18.3333 16.9583V18.3333Z" fill="white" opacity="0.3">
+        </path>
+       </svg>
+       <a href="/./profile">
+        Profile
+       </a>
+      </div>
+     </li>
+     <li>
+      <div class="menu_links">
+       <svg fill="none" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_2035_280)">
+         <path d="M18.3333 14.6667V11.9167H10.0833V10.0833H18.3333V7.33333L22 11L18.3333 14.6667Z" fill="white">
+         </path>
+         <path d="M16.5 8.25V3.66667C16.5 2.65375 15.6796 1.83333 14.6667 1.83333H7.33333C6.32042 1.83333 5.5 2.65375 5.5 3.66667V18.3333C5.5 19.3462 6.32042 20.1667 7.33333 20.1667H14.6667C15.6796 20.1667 16.5 19.3462 16.5 18.3333V13.75H14.6667V18.3333H7.33333V3.66667H14.6667V8.25H16.5Z" fill="white">
+         </path>
+         <path d="M14.6667 19.25H6.41667V2.75H14.6667C15.6796 2.75 16.5 3.57042 16.5 4.58333V17.4167C16.5 18.4296 15.6796 19.25 14.6667 19.25Z" fill="white" opacity="0.3">
+         </path>
+        </g>
+        <defs>
+         <clippath id="clip0_2035_280">
+          <rect fill="white" height="22" width="22">
+          </rect>
+         </clippath>
+        </defs>
+       </svg>
+       <a href="{% url 'account_logout' %}">
+        Sign out
+       </a>
+      </div>
+     </li>
+    </ul>
+   </nav>
+   <div class="nav-mobile" id="menu-ico" onclick="showMenu()">
+    <a id="navbar-toggle">
+     <span>
+     </span>
+    </a>
+   </div>
+   <div class="nav-mobile" onclick="HideMenu()">
+    <a class="close-nav" href="/./buy_sell#" id="close-ico">
+    </a>
+   </div>
+  </header>
+  <div id="go_back" onclick="goBack()" type="button">
+  </div>
+  <div class="filter_trades_by buy_sell_div_btn" id="buy_sell_btn">
+   <div class="filter active_trade_btn" id="buy_div" onclick="javascript:window.location.href='#buy_order'">
+    <h3>
+     Buy
+    </h3>
+   </div>
+   <div class="filter" id="sell_div" onclick="javascript:window.location.href='#sell_order'">
+    <h3>
+     Sell
+    </h3>
+   </div>
+  </div>
+  <div id="order_container">
+   <div class="buy_order_div">
+    <div class="order_form" id="order_form_buy_1">
+     <input id="currency_type_buy" name="currency" type="hidden" value="USDT"/>
+     <input id="xchange_rate_buy" name="xchange-rate" type="hidden" value="{{buy_rate | floatformat:1 | intcomma}}"/>
+     <label for="coin_name">
+      Coin type
+     </label>
+     <select class="my_coin_name" id="coin_type_buy" name="coin_name" onchange="get_coin_network()" required="">
+      <option selected="" value="">
+       Select coin name
+      </option>
+      <option value="BUSD">
+       BUSD
+      </option>
+      <option value="Bnb Smartchain">
+       Bnb Smartchain
+      </option>
+      <option value="Bitcoin">
+       Bitcoin
+      </option>
+      <option value="Ethereum">
+       Ethereum
+      </option>
+      <option value="Litecoin">
+       Litecoin
+      </option>
+      <option value="Tron">
+       Tron
+      </option>
+      <option value="USDT(BEP20)">
+       USDT(BEP20)
+      </option>
+      <option value="USDT TRC20">
+       USDT TRC20
+      </option>
+     </select>
+     <div class="removeEffect" id="hide_wallet">
+      <p class="buy_warning" id="buy_warning">
+      </p>
+      <p class="buy_warning" id="buy_error">
+      </p>
+     </div>
+     <div class="display-rate">
+      Rate N{{buy_rate | floatformat:1 | intcomma}}/$
+     </div>
+     <label for="coin_name">
+      Amount
+     </label>
+     <div style="position: relative;">
+      <input id="coin_amount_buy" name="amount" oninput="convert_currency()" onkeypress="return numbers_only(event)" onkeyup="convert_currency()" placeholder="Amount in Dollar" required="" type="text"/>
+      <div class="local_div_info">
+       <span class="equiv_text" id="equiv_amnt_buy">
+        Amount in Naira 0.0
+       </span>
+       {% comment %} <span>
+        <span class="usd-ngn" id="usd_ngn_buy">
+         Set by Naira
+        </span>
+        <img alt="" src="/static/switch.svg"/>
+       </span> {% endcomment %}
+      </div>
+      <span class="Paste_info currency" id="exchange_currency_buy">
+       USD
+      </span>
+      <span class="errorlist removeEffect" id="error_form_buy_1_2">
+       Please enter a number
+      </span>
+     </div>
+     <div class="sim_btn" id="proceed_buy_btn_1">
+      <h3>
+       Buy Crypto
+      </h3>
+     </div>
+    </div>
+    <div class="order_form my-Confirmation removeEffect" id="order_form_buy_2">
+     <h3 id="buy_msg">
+     </h3>
+     <span class="info">
+      Kindly provide your Wallet Address
+     </span>
+     <div id="my_coin_network">
+      <label>
+       Network 
+      </label>
+      <select class="buy_network" id="coin_network_buy" name="network">
+       <option selected="" value="">
+        Select coin network
+       </option>
+       <option value="BEP-20">
+        BEP-20
+       </option>
+       <option value="BEP-2">
+        BEP-2 | BSC
+       </option>
+       <option value="Btc">
+        Btc
+       </option>
+       <option value="Bitcoin Cash">
+        Bitcoin Cash
+       </option>
+       <option value="DOGE">
+        DOGE
+       </option>
+       <option value="Erc-20">
+        Erc-20
+       </option>
+       <option value="LTC">
+        LTC
+       </option>
+       <option value="SOL">
+        SOL
+       </option>
+       <option value="TRC-20">
+        TRC-20
+       </option>
+       <option value="Polygon(Matic)">
+        Polygon(Matic)
+       </option>
+       <option value="Binance-UID">
+        Binance UID Direct Transfer
+       </option>
+      </select>
+      <span>
+      </span>
+     </div>
+     <div style="position: relative;">
+      <label>
+       Wallet Address | Binance UID
+      </label>
+      <input id="wall_address_buy" maxlength="120" name="wallet_address" placeholder="Wallet addresss" required="" type="text"/>
+      <span>
+      </span>
+      <span class="Paste_info">
+       Paste
+      </span>
+     </div>
+     <div class="sim_btn" id="proceed_buy_btn_2">
+      <h3>
+       Continue
+      </h3>
+     </div>
+    </div>
+    <div class="order_form my-Confirmation removeEffect" id="order_form_buy_3">
+     <div class="confirm-hold" id="holder">
+      <div class="info-logo" style="text-align: center;">
+       <img src="/static/done deskstop.png" style="width: 100%;"/>
+      </div>
+      <div id="terms_and_conditions">
+       <h2>
+        Please, read the instructions below
+       </h2>
+       <ul class="terms_and_conditions_list">
+        <li class="confirmation-success">
+         Third party payments are not allowed. Payments must be made from your personal account, matching your verified name on your {{site.name}} profile.
+        </li>
+        <li class="confirmation-success">
+         For a successful transaction, do not enter any crypto related terms (BTC, USDT, etc.) in your payment narration.
+        </li>
+        <li class="confirmation-success">
+         Opening orders without making payment is not allowed.
+        </li>
+        <li class="confirmation-success">
+         Failure to comply with the above stated terms leads to limitation on your {{site.name}} account and total loss of paid amount.
+        </li>
+        <li class="confirmation-success">
+        <a href="https://docs.google.com/document/d/1E4HX3cgjbgoMR-k2A2ZKa0PGbHxm8gRLcfv3CGPJHHY/edit" style="color: #229de2;" target="_blank">
+            <p> Other terms and conditions </p></a>
+        </li>
+        </ul>
+       <form action=" " class="submit_form" method="POST">
+        {% csrf_token %}
+        <div class="confirmation-box">
+         <input id="input_buy_0" name="currency" type="hidden" value=""/>
+         <input id="input_buy_1" name="coin_name" type="hidden" value=""/>
+         <input id="action" name="action" type="hidden" value="buy"/>
+
+         <input id="input_buy_2" name="amount" type="hidden" value=""/>
+         <input id="input_buy_3" name="network" type="hidden" value=""/>
+         <input id="input_buy_4" name="wallet_address" type="hidden" value=""/>
+         <input id="check-btn" name="i_agree" onclick="func_checked()" required="" type="checkbox"/>
+         <p>
+          I agree to the instructions above and want to proceed to the payment window.
+         </p>
+        </div>
+        <button class="sim_btn confirmation-btn">
+         <h3>
+          Confirm
+         </h3>
+        </button>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="sell_order_div removeEffect">
+    <div class="order_form" id="order_form_sell_1">
+     <input id="currency_type_sell" name="currency" type="hidden" value="USDT"/>
+     <input id="xchange_rate_sell" name="xchange-rate" type="hidden" value="{{sell_rate | floatformat:1 | intcomma}}"/>
+     <label for="coin_name_sell">
+      Coin type
+     </label>
+     <select class="my_coin_name" id="coin_type_sell" name="coin_name_sell" required="">
+      <option selected="" value="">
+       Select coin name
+      </option>
+      <option value="BUSD">
+       BUSD
+      </option>
+      <option value="Bnb Smartchain">
+       Bnb Smartchain
+      </option>
+      <option value="Bitcoin">
+       Bitcoin
+      </option>
+      <option value="Bitcoin Cash">
+       Bitcoin Cash
+      </option>
+      <option value="Dogecoin">
+       Dogecoin
+      </option>
+      <option value="Ethereum">
+       Ethereum
+      </option>
+      <option value="Litecoin">
+       Litecoin
+      </option>
+      <option value="Tron">
+       Tron
+      </option>
+      <option value="USDT(BEP20)">
+       USDT(BEP20)
+      </option>
+      <option value="USD Coin">
+       USD Coin
+      </option>
+      <option value="USDT TRC20">
+       USDT TRC20
+      </option>
+      
+     </select>
+     <div class="display-rate">
+      Rate N{{sell_rate | floatformat:1 | intcomma}}/$
+     </div>
+     <label for="coin_amount">
+      Amount
+     </label>
+     <div style="position: relative;">
+      <input id="coin_amount_sell" name="amount_sell" oninput="convert_currency('SELL')" onkeypress="return numbers_only(event)" onkeyup="convert_currency('SELL')" placeholder="Amount in Dollar" required="" type="text"/>
+      <div class="local_div_info">
+       <span class="equiv_text" id="equiv_amnt_sell" name="naira_amount">
+        Amount in Naira 0.0
+       </span>
+       {% comment %} <span>
+        <span class="usd-ngn" id="usd_ngn_sell">
+         Set by Naira
+        </span>
+        <img alt="" src="/static/switch.svg"/>
+       </span> {% endcomment %}
+      </div>
+      <span class="Paste_info currency" id="exchange_currency_sell">
+       USD
+      </span>
+      <span class="errorlist removeEffect" id="error_form_1_2">
+       Please enter a number
+      </span>
+     </div>
+     <div class="sim_btn" id="proceed_sell_btn_1">
+      <h3>
+       Sell Crypto
+      </h3>
+     </div>
+    </div>
+    <div class="order_form my-Confirmation removeEffect slide" id="order_form_sell_2">
+     <h3 id="sell_msg">
+     </h3>
+     <span class="info">
+      Kindly provide your Bank details
+     </span>
+     <div id="my_coin_network">
+      <label>
+       Network
+      </label>
+      <select id="coin_network_sell" name="network_sell">
+       <option selected="" value="">
+        Select coin network
+       </option>
+       <option value="BEP-20">
+        BEP-20
+       </option>
+       <option value="BEP-2">
+        BEP-2
+       </option>
+       <option value="Btc">
+        Btc
+       </option>
+       <option value="Bitcoin Cash">
+        Bitcoin Cash
+       </option>
+       <option value="DOGE">
+        DOGE
+       </option>
+       <option value="Erc-20">
+        Erc-20
+       </option>
+       <option value="LTC">
+        LTC
+       </option>
+       <option value="SOL">
+        SOL
+       </option>
+       <option value="TRC-20">
+        TRC-20
+       </option>
+       <option value="XRP">
+        XRP
+       </option>
+       <option value="Polygon(Matic)">
+        Polygon(Matic)
+       </option>
+       <option value="Binance-UID">
+        Binance UID Direct Transfer
+       </option>
+      </select>
+      <span>
+      </span>
+     </div>
+     <label>
+      Bank name
+     </label>
+     <select id="bank-name" maxlength="120" name="Bank_name" required="">
+      <option selected="" value="">
+       Please select your bank
+      </option>
+      <option value="ACCESS BANK">
+       ACCESS BANK
+      </option>
+      <option value="GT-BANK">
+       Guaranty Trust Bank
+      </option>
+      <option value="UBA">
+       UNITED BANK FOR AFRICA
+      </option>
+      <option value="Union bank">
+       Union Bank of Nigeria
+      </option>
+      <option value="First bank">
+       First Bank of Nigeria
+      </option>
+      <option value="FCMB">
+       First City Monument Bank
+      </option>
+      <option value="Fidelity Bank">
+       Fidelity Bank
+      </option>
+      <option value="Zenith Bank">
+       Zenith Bank
+      </option>
+      <option value="Heritage Bank">
+       Heritage Bank
+      </option>
+      <option value="Citibank Nigeria">
+       Citibank Nigeria
+      </option>
+      <option value="Keystone Bank">
+       Keystone Bank
+      </option>
+      <option value="Polaris Bank">
+       Polaris Bank
+      </option>
+      <option value="Stanbic IBTC Bank">
+       Stanbic IBTC Bank
+      </option>
+      <option value="Standard Chartered">
+       Standard Chartered
+      </option>
+      <option value="Kuda Microfinance">
+       Kuda Microfinance
+      </option>
+      <option value="Sterling Bank">
+       Sterling Bank
+      </option>
+      <option value="Titan Trust Bank">
+       Titan Trust Bank
+      </option>
+      <option value="Unity Bank">
+       Unity Bank
+      </option>
+      <option value="Wema Bank">
+       Wema Bank
+      </option>
+      <option value="VFD Bank">
+       VFD Bank
+      </option>
+      <option value="Providus bank">
+       Providus bank
+      </option>
+      <option value="Carbon">
+       Carbon Bank
+      </option>
+      <option value="Opay">
+       Opay
+      </option>
+      <option value="Paga Bank">
+       Paga Bank
+      </option>
+      <option value="Palmpay">
+       Palmpay
+      </option>
+      <option value="Sparkle bank">
+       Sparkle bank
+      </option>
+     </select>
+     <label>
+      Account name
+     </label>
+     <input id="account_name" maxlength="120" name="account_name" placeholder="Account name" required="" type="text" value="{{kyc.full_name}}"/>
+     <label>
+      Account number
+     </label>
+     <input id="Account_number" maxlength="120" name="account_number" placeholder="Account number" required="" type="text"/>
+     <label>
+      Note (Optional)
+     </label>
+     <input class="small-note" id="note" maxlength="120" value="blank" name="Note" placeholder="optional" type="text"/>
+     <div class="sim_btn" id="proceed_sell_btn_2">
+      <h3>
+       Continue
+      </h3>
+     </div>
+    </div>
+    <div class="order_form my-Confirmation removeEffect" id="order_form_sell_3">
+     <div class="confirm-hold" id="holder">
+      <div class="info-logo" style="text-align: center;">
+       <img src="/static/done deskstop.png" style="width: 100%;"/>
+      </div>
+      <div id="terms_and_conditions">
+       <h2>
+        Please, read the instructions below
+       </h2>
+       <ul class="terms_and_conditions_list">
+        <li class="confirmation-success">
+         Please note that due to price fluctuations, there may be a slight difference between the amount you receive and the estimated amount.
+        </li>
+        <li class="confirmation-success">
+         Screenshot is compulsory and only Screenshots from payment app is accepted.
+        </li>
+        <li class="confirmation-success">
+         Opening orders without making payment is not allowed.
+        </li>
+        <li class="confirmation-success">
+         Failure to comply with the above stated terms leads to limitation on your {{site.name}} account and total loss of paid amount.
+        </li>
+       </ul>
+       <form action=" " class="submit_form" method="post">
+        {% csrf_token %}
+        <div class="confirmation-box">
+        <input id="action" name="action" type="hidden" value="sell"/>
+         <input id="input_sell_0" name="currency" type="hidden" value=""/>
+         <input id="input_sell_1" name="coin_name_sell" type="hidden" value=""/>
+         <input id="input_sell_2" name="amount_sell" type="hidden" value=""/>
+         <input id="input_sell_3" name="Bank_name" type="hidden" value=""/>
+         <input id="input_sell_4" name="account_name" type="hidden" value=""/>
+        
+
+         <input id="input_sell_5" name="account_number" type="hidden" value=""/>
+         <input id="input_sell_6" name="Note" type="hidden" value=""/>
+         <input id="input_sell_7" name="network_sell" type="hidden" value=""/>
+         <input id="check-btn" name="i_agree" onclick="func_checked()" required="" type="checkbox"/>
+         <p>
+          I agree to the instructions above and want to proceed to the payment window.
+         </p>
+        </div>
+        <button class="sim_btn confirmation-btn">
+         <h3>
+          Confirm
+         </h3>
+        </button>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script src="/static/jquery.min.js">
+  </script>
+  <script src="/static/jquery-3.3.1.js">
+  </script>
+  <script src="/static/myapp.js">
+  </script>
+  <script src="/static/app.js">
+</script>
+  <script src="/static/nav.js">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+   function goBack() {
+            window.history.back();
+        }
+  </script>
+  <script type="text/javascript">
+   let buy_order_div, sell_order_div
+        var baseURl = window.location.href.split('#')[1]
+
+        if (baseURl == 'sell_order') {
+
+            add_sell_div()
+
+        } else {
+
+            add_buy_div();
+
+        }
+
+
+        $('.Paste_info').click(function() {
+            navigator.clipboard.readText().then(
+                cliptext => (document.getElementById('wall_address_buy').value = cliptext),
+                err => console.log(err)
+            );
+        });
+
+
+
+        $('#buy_div').click(function() {
+
+            add_buy_div()
+        });
+
+
+        $('#sell_div').click(function() {
+
+            add_sell_div()
+        });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,23 @@
+
+Dear {{ user.username }},
+
+We want to take a moment to express our gratitude for registering a trading account with us.
+It's always a pleasure to trade with clients who understand the importance of securing their buy and sell transactions through our platform.
+ 
+Additionally, I wanted to inform you that you can start trading right away. However,
+we kindly ask that you upload a means of identification on the KYC verification section of your dashboard.
+This step is crucial in ensuring the safety of your funds and complying with the necessary regulations.
+ 
+If you have any questions or concerns about the verification process, 
+please don't hesitate to reach out to our customer support team on our website or contact [support@xendex.com.ng]. 
+They will be happy to assist you in any way they can.
+ 
+Thank you again for your business, and we look forward to working with you further.
+
+Kindly visit {{ activate_url }} to confirm your account
+
+ 
+Warm Regards, 
+ 
+ 
+ThexendexTeam.
